@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log(path: path.resolve(__dirname, 'dist'));
+console.log(path.resolve(__dirname, 'dist'));
 
 module.exports = {
   entry: {
@@ -72,8 +72,8 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin('[hash].common.bundle.js'),
     new HtmlWebpackPlugin({
-      title: 'btc-e calc',
-      description: '',
+      title: 'BTC-E | Trading fee calculator',
+      description: 'Bitcoin trading fee calculator calculates an amount of profits, losses, and threshold. The calculator supports the BTC-e bitcoin exchange with 0.2% transaction fee. Edit',
       username: 'my8bit',
       filename: 'index.html',
       inject: 'body',
