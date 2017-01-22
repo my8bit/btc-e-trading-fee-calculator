@@ -2,13 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+console.log(path: path.resolve(__dirname, 'dist'));
 
 module.exports = {
   entry: {
     index: './js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[hash].[name].bundle.js',
     chunkFilename: '[hash].[id].bundle.js',
     publicPath: '/'
