@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log(path.resolve(__dirname, 'dist'));
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -41,10 +41,6 @@ module.exports = {
             'es2015'
           ]
         }
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)\w*/,
-        loader: 'file'
       }
     ]
   },
@@ -70,6 +66,9 @@ module.exports = {
         warnings: false
       }
     }),
+    new CopyWebpackPlugin([
+        {from: 'img', to: 'img'}
+    ]),
     new webpack.optimize.CommonsChunkPlugin('[hash].common.bundle.js'),
     new HtmlWebpackPlugin({
       title: 'BTC-E | Trading fee calculator',

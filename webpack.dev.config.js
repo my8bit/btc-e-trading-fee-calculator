@@ -1,9 +1,8 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -38,10 +37,6 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'react-hot!babel?presets[]=react&presets[]=es2015',
         exclude: /(node_modules)/
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)\w*/,
-        loader: 'file'
       }
     ]
   },
@@ -57,6 +52,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([
+        {from: 'img', to: 'img'}
+    ]),
     new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),
     new HtmlWebpackPlugin({
       title: 'BTC-E | Bitcoin trading fee calculator',
