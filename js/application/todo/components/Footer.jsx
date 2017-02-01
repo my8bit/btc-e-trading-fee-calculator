@@ -8,15 +8,14 @@ class Footer extends Component {
     const footerStyle = {
       display: 'block',
       width: '100%',
-      backgroundColor: 'red',
       textAlign: 'center',
       marginTop: '15px'
     };
     return (
       <footer style={footerStyle}>
+        <span>© 2017 <a href="https://github.com/my8bit">@my8bit</a>, <a href="https://icons8.com/web-app/for/all/bitcoin">Icons8</a></span>
       </footer>
     );
   }
 }
-// <span>{'\u00A9 2016 Howard.Zuo, All rights reserved.'}</span>
 export default Footer;
